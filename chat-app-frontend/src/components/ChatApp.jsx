@@ -24,7 +24,7 @@ const ChatApp = () => {
 
   const joinChat = () => {
     if (username.trim()) {
-      socketRef.current = io("http://localhost:5000"); // ✅ New socket instance
+      socketRef.current = io("https://chat-app-p2fe.onrender.com"); // ✅ New socket instance
       socketRef.current.emit("join", username);
       socketRef.current.on("message", handleNewMessage);
       socketRef.current.on("users", handleUserUpdate);
